@@ -15,6 +15,20 @@ Veri Formatı: JSON
 Kütüphaneler: json, random, time, datetime (Standart kütüphaneler)
 
 Gün 1: 09.04.2026
-Projenin yol haritasını ve teknik detaylarını içeren profesyonel bir README dosyası hazırlandı.
 Python ile anlık sıcaklık ve günlük en yüksek değerlerini üreten simülasyon motoru yazıldı.
 AWS Kinesis entegrasyonu için gerekli veri yapıları tanımlandı.
+
+Simülasyon Motoru: Python ile anlık sıcaklık ve "günlük maksimum sıcaklık" takibi yapan akıllı bir sensör simülasyonu geliştirildi.
+
+Bulut Entegrasyonu: AWS Kinesis Data Stream yapılandırıldı. boto3 kütüphanesi kullanılarak lokal ortam ile AWS bulutu arasında canlı veri hattı kuruldu.
+
+Veri Akışı Doğrulandı
+Sistem başarıyla test edildi ve verilerin bilgisayarımdan AWS bulutuna ulaştığı kanıtlandı.
+AWS Konsolu üzerindeki Data Viewer kullanılarak, gönderilen veriler canlı olarak görüntülendi.
+Sonuç: Yazılan Python kodu ile AWS Kinesis arasında kesintisiz bir veri hattı kuruldu. Gönderilen her sıcaklık verisi, bulut tarafında anında kayıt altına alındı.
+
+Karşılaşılan Teknik Engeller ve Çözümleri
+Sorun: Lambda Kinesis Tetikleyici Hatası (Access Denied)
+Lambda fonksiyonuna Kinesis Stream tetikleyicisi eklenmeye çalışıldığında şu hata ile karşılaşılmıştır:
+
+"An error occurred when creating the trigger: Cannot access stream... Please ensure the role can perform the GetRecords, GetShardIterator... actions on your stream."
