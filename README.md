@@ -32,3 +32,7 @@ Sorun: Lambda Kinesis Tetikleyici Hatası (Access Denied)
 Lambda fonksiyonuna Kinesis Stream tetikleyicisi eklenmeye çalışıldığında şu hata ile karşılaşılmıştır:
 
 "An error occurred when creating the trigger: Cannot access stream... Please ensure the role can perform the GetRecords, GetShardIterator... actions on your stream."
+
+
+Gün 2: 10.04.2026
+Çözüm:Lambda'nın bağlı olduğu IAM Rolüne AWSLambdaKinesisExecutionRole politikası tanımlanarak veri işleme izni sağlandı.
