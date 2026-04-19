@@ -36,3 +36,9 @@ Lambda fonksiyonuna Kinesis Stream tetikleyicisi eklenmeye çalışıldığında
 
 Gün 2: 10.04.2026
 Çözüm:Lambda'nın bağlı olduğu IAM Rolüne AWSLambdaKinesisExecutionRole politikası tanımlanarak veri işleme izni sağlandı.
+
+Gün 3: 19.04.2026
+Genel Değerlendirme ve Sonuç
+Amaç: Bu projenin amacı, gerçek zamanlı bir IoT (Nesnelerin İnterneti) hava durumu istasyonundan elde edilecek verilerin; modern ve sunucusuz (serverless) bulut teknolojileri kullanılarak toplanması, eşzamanlı olarak analiz edilmesi ve kalıcı olarak depolanmasıdır.
+
+Sonuç: Geliştirilen mimari sayesinde; Python tabanlı simülatör ile üretilen anlık sensör verileri AWS Kinesis üzerinden başarılı bir şekilde bulut ortamına aktarılmıştır. AWS Lambda servisi, bu akışı dinleyerek gerçek zamanlı anomali tespiti (Yüksek Sıcaklık Alarmı) yapmış ve işlenen veriler NoSQL formatında AWS DynamoDB üzerinde kayıt altına alınmıştır. Sistem; bulut bilişim mimarisine, "Least Privilege" (En Düşük Ayrıcalık) güvenlik prensiplerine ve asenkron veri işleme standartlarına tam uygun olarak uçtan uca çalışır halde teslim edilmiştir.
